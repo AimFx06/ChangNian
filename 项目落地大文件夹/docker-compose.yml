@@ -1,0 +1,61 @@
+name: changnian
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: changnian-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-123456}
+      MYSQL_DATABASE: ${DB_NAME:-changnian}
+      TZ: Asia/Shanghai
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
+    volumes:
+      - changnian_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-p${MYSQL_ROOT_PASSWORD:-123456}"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  server:
+    build:
+      context: ./docker/server
+    container_name: changnian-server
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      SERVER_PORT: 8080
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME:-changnian}
+      DB_USERNAME: root
+      DB_PASSWORD: ${MYSQL_ROOT_PASSWORD:-123456}
+      APP_JWT_SECRET: ${APP_JWT_SECRET:-changnian-competition-demo-secret}
+      APP_UPLOAD_DIR: /app/uploads
+      APP_DEMO_SEED_HISTORY: ${APP_DEMO_SEED_HISTORY:-true}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      DEEPSEEK_MODEL: ${DEEPSEEK_MODEL:-deepseek-v4-flash}
+      TZ: Asia/Shanghai
+    ports:
+      - "${SERVER_PORT:-8080}:8080"
+    volumes:
+      - changnian_uploads:/app/uploads
+
+  web:
+    image: nginx:1.27-alpine
+    container_name: changnian-web
+    restart: unless-stopped
+    depends_on:
+      - server
+    ports:
+      - "${WEB_PORT:-5173}:80"
+    volumes:
+      - ./docker/web-h5:/usr/share/nginx/html:ro
+
+volumes:
+  changnian_mysql:
+  changnian_uploads:

@@ -1,0 +1,41 @@
+{
+  "name": "常念",
+  "appid": "__UNI__CHANGNIAN",
+  "description": "用 AI 帮助异地子女与父母维持情感连接",
+  "versionName": "0.1.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "app-plus": {
+    "usingComponents": true,
+    "nvueStyleCompiler": "uni-app",
+    "compilerVersion": 3,
+    "distribute": {
+      "android": {
+        "permissions": [
+          "android.permission.INTERNET",
+          "android.permission.RECORD_AUDIO",
+          "android.permission.CAMERA",
+          "android.permission.READ_EXTERNAL_STORAGE",
+          "android.permission.WRITE_EXTERNAL_STORAGE",
+          "android.permission.ACCESS_NETWORK_STATE"
+        ]
+      },
+      "icons": {
+        "android": {
+          "ldpi": "src/static/icons/icon-ldpi.png",
+          "mdpi": "src/static/icons/icon-mdpi.png",
+          "hdpi": "src/static/icons/icon-hdpi.png",
+          "xhdpi": "src/static/icons/icon-xhdpi.png",
+          "xxhdpi": "src/static/icons/icon-xxhdpi.png",
+          "xxxhdpi": "src/static/icons/icon-xxxhdpi.png"
+        }
+      }
+    }
+  },
+  "h5": {
+    "title": "常念",
+    "router": {
+      "mode": "hash"
+    }
+  }
+}

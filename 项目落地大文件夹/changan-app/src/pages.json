@@ -1,0 +1,65 @@
+{
+  "pages": [
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "常念"
+      }
+    },
+    {
+      "path": "pages/register/index",
+      "style": {
+        "navigationBarTitleText": "注册常念"
+      }
+    },
+    {
+      "path": "pages/child/status",
+      "style": {
+        "navigationBarTitleText": "近况"
+      }
+    },
+    {
+      "path": "pages/child/status-seven",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/child/detail",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/child/topics",
+      "style": {
+        "navigationBarTitleText": "话题"
+      }
+    },
+    {
+      "path": "pages/child/family",
+      "style": {
+        "navigationBarTitleText": "家"
+      }
+    },
+    {
+      "path": "pages/child/family-memories",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/elder/home",
+      "style": {
+        "navigationBarTitleText": "常念"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "常念",
+    "navigationBarBackgroundColor": "#F5F5F7",
+    "backgroundColor": "#F5F5F7"
+  }
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>常念 · 配色系统 · Design Tokens</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+                 "PingFang SC", "Helvetica Neue", sans-serif;
+    background: #ECECF0;
+    color: #1C1C1E;
+    padding: 48px 32px 80px;
+    letter-spacing: -0.1px;
+  }
+
+  .page { max-width: 960px; margin: 0 auto; }
+
+  .page-title {
+    font-size: 32px; font-weight: 700; letter-spacing: -0.8px; margin-bottom: 6px;
+  }
+  .page-sub {
+    font-size: 15px; color: #8E8E93; margin-bottom: 36px;
+  }
+
+  .section { margin-bottom: 40px; }
+  .section-title {
+    font-size: 13px; font-weight: 700; color: #8E8E93;
+    text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 14px;
+    padding-left: 4px;
+  }
+
+  .grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  }
+
+  .swatch {
+    background: #FFFFFF; border-radius: 16px; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .swatch .chip {
+    height: 96px; display: flex; align-items: flex-end; padding: 14px;
+    font-size: 12px; font-weight: 600;
+  }
+  .swatch .body { padding: 14px 16px 16px; }
+  .swatch .name {
+    font-size: 15px; font-weight: 700; margin-bottom: 2px;
+  }
+  .swatch .hex {
+    font-family: "SF Mono", ui-monospace, Menlo, monospace;
+    font-size: 13px; color: #8E8E93; margin-bottom: 8px;
+  }
+  .swatch .usage {
+    font-size: 13px; line-height: 1.55; color: #3C3C43;
+  }
+
+  .rule {
+    background: #FFFFFF; border-radius: 16px; padding: 20px 22px;
+    font-size: 14px; line-height: 1.7; color: #1C1C1E;
+  }
+  .rule strong { font-weight: 700; }
+
+  .dot-row {
+    display: flex; gap: 18px; align-items: center; flex-wrap: wrap;
+    background: #FFFFFF; border-radius: 16px; padding: 18px 22px;
+  }
+  .dot-item { display: flex; align-items: center; gap: 8px; }
+  .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  .dot-item .label { font-size: 13px; color: #3C3C43; }
+
+  /* chip 内部文字颜色处理 */
+  .chip.light { color: #1C1C1E; }
+  .chip.dark  { color: #FFFFFF; }
+  .chip.bordered { border: 0.5px solid #E5E5EA; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="page-title">常念 · 配色系统</div>
+  <div class="page-sub">Apple Health 风格 · 2025 基础色板</div>
+
+  <!-- 主色 -->
+  <div class="section">
+    <div class="section-title">主色</div>
+    <div class="grid">
+      <div class="swatch">
+        <div class="chip dark" style="background:#FA114F;">#FA114F</div>
+        <div class="body">
+          <div class="name">心跳红</div>
+          <div class="hex">#FA114F</div>
+          <div class="usage">递话筒按钮、连续联系天数、心跳动效、新消息徽标</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 背景色 -->
+  <div class="section">
+    <div class="section-title">背景色</div>
+    <div class="grid">
+      <div class="swatch">
+        <div class="chip light bordered" style="background:#FFFFFF;">#FFFFFF</div>
+        <div class="body">
+          <div class="name">系统白</div>
+          <div class="hex">#FFFFFF</div>
+          <div class="usage">卡片底色、模态弹窗</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip light" style="background:#ECECF0;">#ECECF0</div>
+        <div class="body">
+          <div class="name">分组灰</div>
+          <div class="hex">#ECECF0</div>
+          <div class="usage">页面底色，用于托起白色卡片</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 功能色 -->
+  <div class="section">
+    <div class="section-title">功能色 · 对应三个 Tab</div>
+    <div class="grid">
+      <div class="swatch">
+        <div class="chip dark" style="background:#FF9500;">#FF9500</div>
+        <div class="body">
+          <div class="name">活力橙 · 话题</div>
+          <div class="hex">#FF9500</div>
+          <div class="usage">今日话题卡片、"聊点什么"按钮、AI 对话引子</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip dark" style="background:#30D158;">#30D158</div>
+        <div class="body">
+          <div class="name">平安绿 · 近况</div>
+          <div class="hex">#30D158</div>
+          <div class="usage">"爸妈今天一切正常"状态点、用药打卡、在线状态</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip dark" style="background:#0A84FF;">#0A84FF</div>
+        <div class="body">
+          <div class="name">回忆蓝 · 家</div>
+          <div class="hex">#0A84FF</div>
+          <div class="usage">家庭档案、老照片、周报入口、家人资料页</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:14px;"></div>
+    <div class="dot-row">
+      <div class="dot-item"><span class="dot" style="background:#FF9500;"></span><span class="label">话题</span></div>
+      <div class="dot-item"><span class="dot" style="background:#30D158;"></span><span class="label">近况</span></div>
+      <div class="dot-item"><span class="dot" style="background:#0A84FF;"></span><span class="label">家</span></div>
+      <div class="dot-item"><span class="dot" style="background:#FA114F;"></span><span class="label">心跳红</span></div>
+    </div>
+  </div>
+
+  <!-- 文字色 -->
+  <div class="section">
+    <div class="section-title">文字色</div>
+    <div class="grid">
+      <div class="swatch">
+        <div class="chip dark" style="background:#1C1C1E;">#1C1C1E</div>
+        <div class="body">
+          <div class="name">主文字</div>
+          <div class="hex">#1C1C1E</div>
+          <div class="usage">标题、正文、重要数字</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip dark" style="background:#8E8E93;">#8E8E93</div>
+        <div class="body">
+          <div class="name">次要文字</div>
+          <div class="hex">#8E8E93</div>
+          <div class="usage">时间戳、说明文字、禁用态</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip light bordered" style="background:#E5E5EA;">#E5E5EA</div>
+        <div class="body">
+          <div class="name">分隔线</div>
+          <div class="hex">#E5E5EA</div>
+          <div class="usage">列表分割、卡片边框</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 告警色 -->
+  <div class="section">
+    <div class="section-title">告警色 · 仅紧急场景</div>
+    <div class="grid">
+      <div class="swatch">
+        <div class="chip dark" style="background:#FF3B30;">#FF3B30</div>
+        <div class="body">
+          <div class="name">告警红</div>
+          <div class="hex">#FF3B30</div>
+          <div class="usage">SOS、漏药 24h、跌倒提醒。日常绝不使用</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 使用原则 -->
+  <div class="section">
+    <div class="section-title">使用原则</div>
+    <div class="rule">
+      整体界面 <strong>90% 由黑白灰 + 心跳红</strong> 构成。三个 Tab 功能色（活力橙、平安绿、回忆蓝）只出现在小圆点、图标、进度条等小元素上，不做大面积背景。<br><br>
+      <strong>心跳红 #FA114F</strong> 与 <strong>告警红 #FF3B30</strong> 严格区分：前者承载日常情感表达，后者只留给真正紧急状态。
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+.page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 24rpx 28rpx 140rpx;
+  background: #f5f5f7;
+}
+
+.page-title {
+  margin-top: 20rpx;
+  font-size: 44rpx;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #111113;
+}
+
+.page-sub {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #6e6e73;
+}
+
+.card {
+  margin-top: 24rpx;
+  padding: 28rpx;
+  border-radius: 16rpx;
+  background: #ffffff;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  font-size: 30rpx;
+  line-height: 1.35;
+  font-weight: 800;
+  color: #1d1d1f;
+}
+
+.muted {
+  color: #86868b;
+}
+
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88rpx;
+  border-radius: 14rpx;
+  background: #111113;
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.secondary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 82rpx;
+  border-radius: 14rpx;
+  background: #f2f2f7;
+  color: #1d1d1f;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.danger-button {
+  background: #d70015;
+  color: #ffffff;
+}
+
+.input {
+  width: 100%;
+  min-height: 88rpx;
+  box-sizing: border-box;
+  padding: 0 24rpx;
+  border-radius: 14rpx;
+  background: #ffffff;
+  border: 1rpx solid #e5e5ea;
+  font-size: 30rpx;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 180rpx;
+  box-sizing: border-box;
+  padding: 20rpx 24rpx;
+  border-radius: 14rpx;
+  background: #ffffff;
+  border: 1rpx solid #e5e5ea;
+  font-size: 30rpx;
+  line-height: 1.5;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.uni-modal__hd,
+.uni-modal__title {
+  text-align: center;
+}
+
+.uni-modal__title {
+  display: block;
+  width: 100%;
+}

@@ -1,0 +1,31 @@
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Frontend dependencies and generated bundles
+**/node_modules/
+**/dist/
+
+# Backend and Android build output
+**/target/
+**/build/
+**/.gradle/
+
+# Local logs and temporary run files
+*.log
+**/tmp-run/
+
+# Signing keys and installable packages
+**/keystore/
+*.jks
+*.keystore
+*.pem
+*.key
+*.p12
+*.pfx
+*.apk
+
+# OS/editor metadata
+.DS_Store
+Thumbs.db
